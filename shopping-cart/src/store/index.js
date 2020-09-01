@@ -1,7 +1,7 @@
-import Vue from "vue"
-import Vuex from "vuex"
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
@@ -41,27 +41,28 @@ export default new Vuex.Store({
 
     StoreCart: [],
   },
-
   getters: {
     products: (state) => state.products,
     StoreCart: (state) => state.StoreCart,
   },
-  mutation: {
+
+  mutations: {
     ADD_Item(state, id) {
-      state.StoreCart.push(id)
-    },
-    REMOVE_Item(state, index) {
-      state.StoreCart.splice(index, 1)
-    },
-  },
-  action: {
-    addItem(context, id) {
-      context.commit("ADD_Item", id)
+      state.StoreCart.push(id);
     },
 
-    removeItem(context, index) {
-      context.commit("REMOVE_Item", index)
+    REMOVE_Item(state, index) {
+      state.StoreCart.splice(index, 1);
+    },
+  },
+  actions: {
+    add__Item(context, id) {
+      context.commit("ADD_Item", id);
+    },
+
+    remove__Item(context, index) {
+      context.commit("REMOVE_Item", index);
     },
   },
   modules: {},
-})
+});

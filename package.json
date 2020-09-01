@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "sass-loader": "^10.0.1",
+    "vue-router": "^3.4.3"
+  }
+}
